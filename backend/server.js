@@ -4,6 +4,7 @@ const express = require('express')
 const cors = require('cors')
 const mongoose = require('mongoose')
 const workoutRoutes = require('./routes/workouts')
+const userRoutes = require('./routes/user')
 
 // Express app
 const app = express()
@@ -20,6 +21,8 @@ app.use( (req, res, next) => {
 // routes
 // localhost:4000/api/workouts
 app.use('/api/workouts', workoutRoutes)
+// localhost:4000/api/users
+app.use('/api/user', userRoutes)
 
 // Connect to database
 mongoose.connect(process.env.ATLAS_URI)
