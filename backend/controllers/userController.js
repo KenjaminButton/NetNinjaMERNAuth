@@ -12,8 +12,8 @@ const signupUser = async (req, res) => {
     const user = await User.signup(email, password)
 
     res.status(200).json({email, user})
-  } catch(err) {
-    res.status(400).json({error: error.msg})
+  } catch(error) {
+    res.status(400).json({error: error.message})
   }
 }
 
